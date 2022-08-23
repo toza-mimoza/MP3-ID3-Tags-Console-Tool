@@ -2,7 +2,11 @@ from dataclasses import replace
 import os
 from .exceptions import IllegalArgumentError
 from mutagen import File
-import readline
+
+# prompt_toolkit pip package
+from prompt_toolkit import prompt
+from prompt_toolkit.completion import WordCompleter
+
 
 
 class Util:
@@ -41,14 +45,10 @@ class Util:
         ]
 
     @staticmethod
-    def input_with_prefill(prompt, prefill):
-        def hook():
-            readline.insert_text(prefill)
-            readline.redisplay()
-        readline.set_pre_input_hook(hook)
-        result = input(prompt)
-        readline.set_pre_input_hook()
-        return result
+    def input_with_prefill(prompt_question, suggestion):
+        title_completer = WordCompleter([suggestion])
+        return prompt(prompt_question, completer=title_completer)
+
     @staticmethod
     def replace_all(string):
         result = string
