@@ -4,3 +4,4 @@ prompt-toolkit==3.0.30
 pyinstaller==5.3
 pyinstaller-hooks-contrib==2022.8
 wcwidth==0.2.5
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
