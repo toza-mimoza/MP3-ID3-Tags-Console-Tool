@@ -1,6 +1,6 @@
 altgraph==0.17.2
 mutagen==1.45.1
 prompt-toolkit==3.0.30
-pyinstaller==5.3
+pyinstaller==5.13.1
 pyinstaller-hooks-contrib==2022.8
 wcwidth==0.2.5
